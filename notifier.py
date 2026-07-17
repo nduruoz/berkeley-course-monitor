@@ -1,6 +1,9 @@
 import requests
 
-TOPIC = "duru-berkeley-course-8fe9kc"
+import os
+import requests
+
+TOPIC = os.getenv("NTFY_TOPIC")
 
 def notify(title, message):
     requests.post(
@@ -12,4 +15,3 @@ def notify(title, message):
             "Tags": "warning,books"
         }
     )
-    
