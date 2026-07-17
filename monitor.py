@@ -52,12 +52,14 @@ for c in courses:
             # Notify only when seats become available
             if not seats_available(old_seats) and seats_available(new_seats):
 
+                print(repr(" Berkeley Seat Open!"))
+
                 notify(
                     " Berkeley Seat Open!",
                     f"{c.course} Section {c.section}\n\nStatus: {new_seats}"
                 )
 
-                print(f"🎉 Seat opened for {c.course} Section {c.section}")
+                print(f" Seat opened for {c.course} Section {c.section}")
 
             else:
                 print(
