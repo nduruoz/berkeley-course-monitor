@@ -54,7 +54,8 @@ for c in courses:
             if not seats_available(old_seats) and seats_available(new_seats):
 
                 
-
+                print("Calling notify...", flush=True)
+                print(repr(" Berkeley Seat Open!"), flush=True)
                 notify(
                     " Berkeley Seat Open!",
                     f"{c.course} Section {c.section}\n\nStatus: {new_seats}"
