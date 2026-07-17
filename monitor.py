@@ -1,3 +1,4 @@
+print("DEBUG VERSION 2")
 from notifier import notify
 from berkeley import fetch_courses
 from state import load_state, save_state
@@ -52,7 +53,7 @@ for c in courses:
             # Notify only when seats become available
             if not seats_available(old_seats) and seats_available(new_seats):
 
-                print(repr(" Berkeley Seat Open!"))
+                
 
                 notify(
                     " Berkeley Seat Open!",
