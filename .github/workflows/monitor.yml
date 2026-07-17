@@ -27,7 +27,7 @@ jobs:
       - name: Install Playwright browsers
         run: python -m playwright install --with-deps chromium
 
-        - name: Show notifier.py
+      - name: Show notifier.py
         run: |
           echo "===== notifier.py ====="
           cat notifier.py
