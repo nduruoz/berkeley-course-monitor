@@ -1,19 +1,23 @@
 import os
 import requests
 
-TOPIC = os.getenv("NTFY_TOPIC", "...")
+TOPIC = os.getenv("NTFY_TOPIC")
 
 def notify(title, message):
-    print("TITLE:", repr(title), flush=True)
-    print("TOPIC:", repr(TOPIC), flush=True)
-
     headers = {
         "Title": title,
         "Priority": "5",
-        "Tags": "warning,books"
+        "Tags": "warning,books",
     }
 
-    print("HEADERS:", repr(headers), flush=True)
+    print("Before requests.post", flush=True)
 
-    # Stop here for debugging
-    raise Exception("Debug stop")
+    response = requests.post(
+        f"https://ntfy.sh/{TOPIC}",
+        data=message.encode("utf-8"),
+        headers=headers,
+    )
+
+    print("After requests.post", flush=True)
+
+    response.raise_for_status()
