@@ -53,7 +53,7 @@ for c in courses:
             if not seats_available(old_seats) and seats_available(new_seats):
 
                 notify(
-                    "🎉 Berkeley Seat Open!",
+                    " Berkeley Seat Open!",
                     f"{c.course} Section {c.section}\n\nStatus: {new_seats}"
                 )
 
