@@ -1,7 +1,7 @@
 import os
 import requests
 
-TOPIC = os.getenv("NTFY_TOPIC", "duru-berkeley-course-8fe9kc")
+TOPIC = os.getenv("NTFY_TOPIC", "...")
 
 def notify(title, message):
     response = requests.post(
@@ -13,5 +13,3 @@ def notify(title, message):
             "Tags": "warning,books"
         }
     )
-
-    response.raise_for_status()
