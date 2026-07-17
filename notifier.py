@@ -1,12 +1,10 @@
-import requests
-
 import os
 import requests
 
-TOPIC = os.getenv("NTFY_TOPIC")
+TOPIC = os.getenv("NTFY_TOPIC", "duru-berkeley-course-8fe9kc")
 
 def notify(title, message):
-    requests.post(
+    response = requests.post(
         f"https://ntfy.sh/{TOPIC}",
         data=message.encode("utf-8"),
         headers={
@@ -15,3 +13,5 @@ def notify(title, message):
             "Tags": "warning,books"
         }
     )
+
+    response.raise_for_status()
