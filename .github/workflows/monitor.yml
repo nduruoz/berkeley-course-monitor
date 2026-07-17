@@ -2,8 +2,11 @@ name: Berkeley Course Monitor
 
 on:
   schedule:
-    - cron: "*/5 * * * *"   # Every 5 minutes
+    - cron: "*/5 * * * *"
   workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   monitor:
@@ -19,8 +22,7 @@ jobs:
           python-version: "3.12"
 
       - name: Install dependencies
-        run: |
-          pip install -r requirements.txt
+        run: pip install -r requirements.txt
 
       - name: Run monitor
         env:
@@ -29,12 +31,12 @@ jobs:
 
       - name: Commit updated state
         run: |
-          git config --global user.name "github-actions"
-          git config --global user.email "github-actions@github.com"
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
 
           git add state.json
 
-          git diff --cached --quiet || git commit -m "Update state"
-
-          git push
-          
+          if ! git diff --cached --quiet; then
+            git commit -m "Update course state"
+            git push
+          fi
