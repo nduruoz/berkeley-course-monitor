@@ -10,6 +10,9 @@ def notify(title, message):
         "Tags": "warning,books",
     }
 
+    print("TITLE:", repr(title), flush=True)
+    print("TOPIC:", repr(TOPIC), flush=True)
+    print("HEADERS:", repr(headers), flush=True)
     print("Before requests.post", flush=True)
 
     response = requests.post(
