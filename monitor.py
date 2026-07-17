@@ -57,7 +57,7 @@ for c in courses:
                 print("Calling notify...", flush=True)
                 print(repr(" Berkeley Seat Open!"), flush=True)
                 notify(
-                    " Berkeley Seat Open!",
+                    "Berkeley Seat Open!",
                     f"{c.course} Section {c.section}\n\nStatus: {new_seats}"
                 )
 
