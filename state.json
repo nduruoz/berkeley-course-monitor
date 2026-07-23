@@ -4,6 +4,11 @@
     "section": "019",
     "seats": "No Open Seats"
   },
+  "Class #: 24893": {
+    "course": "COLWRIT R1A",
+    "section": "020",
+    "seats": "No Open Seats"
+  },
   "Class #: 24894": {
     "course": "COLWRIT R1A",
     "section": "021",
@@ -82,11 +87,6 @@
   "Class #: 25508": {
     "course": "COLWRIT R1A",
     "section": "036",
-    "seats": "No Open Seats"
-  },
-  "Class #: 25509": {
-    "course": "COLWRIT R1A",
-    "section": "037",
     "seats": "No Open Seats"
   }
 }
